@@ -30,7 +30,7 @@ function setup (){
   colorMode(HSB, 1, 1, 1);
   windowResized();
 
-  //canvas.parent("sketch-container");
+  canvas.parent("sketch-container");
   addGUI();
 }
 
@@ -46,16 +46,16 @@ function draw(){
   if(light > 0 ){
 
     //Add shining
-    light++;
+    light+=0.01;
 
 
   }else{
     shining = false;
      button.html("SHINE");
-     button.removeClass("inactive");
+     //button.removeClass("inactive");
   }
 
-  for (let n = 0; n < speed; n++){
+  for (let n = 0; n < speed; n+=10){
     for (let i = 0; i < points.length; i += 2){
       let p  = points[i];
       let p2 = points[i+1];
@@ -88,7 +88,7 @@ function addGUI()
   
   button.addClass("button");
   
-  // button.style("color","red");
+   //button.style("color","red");
 
   button.mousePressed(handleButtonPress);
 }
@@ -102,7 +102,7 @@ function handleButtonPress(){
     
     button.html("SHINING");
     
-    button.addClass("inactive");
+    //button.addClass("inactive");
   
   }
 
